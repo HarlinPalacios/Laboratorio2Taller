@@ -119,24 +119,24 @@ Las siguientes funcionalidades necesitan ser desarrolladas:
       A travez de este controlador se podra actualizar la foto del usuario la cual se asigno cuando se registro, ya actualizada la foto se eliminara la foto de la base de datos y se colocara la nueva imagen.
 
       **URL:** 
-      v1/user/updateProfilePicture/:uid
+      `v1/user/updateProfilePicture/:uid`
 
       **METODO:** 
-      patch
+      `patch`
 
       **CUERPO:**
-      profilePicture  y la imagen a actualizar
+      `profilePicture  y la imagen a actualizar`
 
 2. **Listar Citas**
    - Descripción: Implementar funcionalidad para listar todas las citas de un usuario.
 
-      A travez de este metodo se podra listar las citas que se generaron.
+      `A travez de este metodo se podra listar las citas que se generaron.`
 
       **URL:** 
-      /v1/appointment/
+      `/v1/appointment/`
 
       **METODO:**
-      get
+      `get`
 
       **CUERPO:**
   
@@ -144,32 +144,32 @@ Las siguientes funcionalidades necesitan ser desarrolladas:
 3. **Actualizar Cita**
    - Descripción: Implementar funcionalidad para actualizar una cita existente.
 
-    A travez de este metodos se podra actualizar la cita, se podra remplazar la fecha estimada a la cual estaba la ciat de la mascota, mandando a llamar el id de la cita e introduciendo los datos para poder actualizar la cita, ingresando la fecha a la cual se requiere reagendar y los ide de la mascota y el dueño(encargado).
+    `A travez de este metodos se podra actualizar la cita, se podra remplazar la fecha estimada a la cual estaba la ciat de la mascota, mandando a llamar el id de la cita e introduciendo los datos para poder actualizar la cita, ingresando la fecha a la cual se requiere reagendar y los ide de la mascota y el dueño(encargado).`
 
       **URL:**
-      /v1/appointment/updateAppointment/:uid
+      `/v1/appointment/updateAppointment/:uid`
 
       **METODO:**
-      put
+      `put`
 
       **CUERPO:**
-        "date": "2025-5-15",
-        "pet": "67aac0c8ff343c2dbc13c285",
-        "user": "67aab3dd58af236ab140692d"
+        `"date": "2025-5-15",`
+        `"pet": "67aac0c8ff343c2dbc13c285",`
+        `"user": "67aab3dd58af236ab140692d"`
   
   
 
 4. **Cancelar Cita**
    - Descripción: Implementar funcionalidad para cancelar una cita existente.
 
-      A travez de este metodo se podra cancelar la cita esto se podra hacer por el id de la cita generada.
+      `A travez de este metodo se podra cancelar la cita esto se podra hacer por el id de la cita generada.`
 
       **URL:**
-      v1/appointment/cancelarAppointment/:uid
+      `v1/appointment/cancelarAppointment/:uid`
 
       **METODO:** 
-      patch
+      `patch`
 
       **CUERPO:** 
-      id de la cita a cancelar
+      `id de la cita a cancelar`
   
