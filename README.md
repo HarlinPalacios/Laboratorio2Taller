@@ -116,43 +116,60 @@ Las siguientes funcionalidades necesitan ser desarrolladas:
 1. **Actualizar Foto del Usuario**
    - Descripción: Implementar funcionalidad para actualizar la foto de perfil del usuario.
 
-    URL: v1/user/updateProfilePicture/:uid
+      A travez de este controlador se podra actualizar la foto del usuario la cual se asigno cuando se registro, ya actualizada la foto se eliminara la foto de la base de datos y se colocara la nueva imagen.
 
-    METODO: patch
+      **URL:** 
+      v1/user/updateProfilePicture/:uid
 
-    CUERPO: profilePicture  y la imagen a actualizar
+      **METODO:** 
+      patch
+
+      **CUERPO:**
+      profilePicture  y la imagen a actualizar
 
 2. **Listar Citas**
    - Descripción: Implementar funcionalidad para listar todas las citas de un usuario.
 
-  URL: /v1/appointment/
+      A travez de este metodo se podra listar las citas que se generaron.
 
-  METODO: get
+      **URL:** 
+      /v1/appointment/
 
-  CUERPO: 
+      **METODO:**
+      get
+
+      **CUERPO:**
   
 
 3. **Actualizar Cita**
    - Descripción: Implementar funcionalidad para actualizar una cita existente.
 
-  URL: /v1/appointment/updateAppointment/:uid
+    A travez de este metodos se podra actualizar la cita, se podra remplazar la fecha estimada a la cual estaba la ciat de la mascota, mandando a llamar el id de la cita e introduciendo los datos para poder actualizar la cita, ingresando la fecha a la cual se requiere reagendar y los ide de la mascota y el dueño(encargado).
 
-  METODO: put
+      **URL:**
+      /v1/appointment/updateAppointment/:uid
 
-  CUERPO: 
-  {
-    "date": "2025-5-15",
-    "pet": "67aac0c8ff343c2dbc13c285",
-    "user": "67aab3dd58af236ab140692d"
-  }
+      **METODO:**
+      put
+
+      **CUERPO:**
+        "date": "2025-5-15",
+        "pet": "67aac0c8ff343c2dbc13c285",
+        "user": "67aab3dd58af236ab140692d"
+  
   
 
 4. **Cancelar Cita**
    - Descripción: Implementar funcionalidad para cancelar una cita existente.
 
-  URL: v1/appointment/cancelarAppointment/:uid
+      A travez de este metodo se podra cancelar la cita esto se podra hacer por el id de la cita generada.
 
-  METODO: patch
+      **URL:**
+      v1/appointment/cancelarAppointment/:uid
 
-  CUERPO: id de la cita a cancelar
+      **METODO:** 
+      patch
+
+      **CUERPO:** 
+      id de la cita a cancelar
   

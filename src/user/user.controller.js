@@ -138,6 +138,7 @@ export const updateUser = async (req, res) => {
     }
 }
 
+//Autualizacion de la Foto del user
 export const updateProfilePicture = async (req, res) => {
     try{
         const { uid } = req.params
