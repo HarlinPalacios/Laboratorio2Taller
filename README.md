@@ -116,7 +116,7 @@ Las siguientes funcionalidades necesitan ser desarrolladas:
 1. **Actualizar Foto del Usuario**
    - Descripción: Implementar funcionalidad para actualizar la foto de perfil del usuario.
 
-      A travez de este controlador se podra actualizar la foto del usuario la cual se asigno cuando se registro, ya actualizada la foto se eliminara la foto de la base de datos y se colocara la nueva imagen.
+      `A travez de este controlador se podra actualizar la foto del usuario la cual se asigno cuando se registro, ya actualizada la foto se eliminara la foto de la base de datos y se colocara la nueva imagen.`
 
       **URL:** 
       `v1/user/updateProfilePicture/:uid`
