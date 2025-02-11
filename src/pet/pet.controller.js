@@ -25,6 +25,7 @@ export const savePet = async (req, res) => {
 
         res.status(200).json({
             success: true,
+            message: "Mascota agregada",
             pet
         });
     } catch (error) {

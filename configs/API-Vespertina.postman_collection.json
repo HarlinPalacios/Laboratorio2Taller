@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "4d0660a2-1102-48ba-b0f0-a06d694ab130",
+		"_postman_id": "64841e46-6ea6-4d08-be33-8bef5f088125",
 		"name": "API-Vespertina",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
-		"_exporter_id": "12536023"
+		"_exporter_id": "41829725"
 	},
 	"item": [
 		{
@@ -19,47 +19,47 @@
 							"formdata": [
 								{
 									"key": "name",
-									"value": "Joséss",
+									"value": "Catalina",
 									"type": "text"
 								},
 								{
 									"key": "surname",
-									"value": "Balenciagass",
+									"value": "Maroquin",
 									"type": "text"
 								},
 								{
 									"key": "username",
-									"value": "jbalenciaga3",
+									"value": "Camaroquin13",
 									"type": "text"
 								},
 								{
 									"key": "email",
-									"value": "jbalenciaga3@gmail.es",
-									"type": "text"
-								},
-								{
-									"key": "phone",
-									"value": "22160098",
+									"value": "catalina@gmsil.com",
 									"type": "text"
 								},
 								{
 									"key": "password",
-									"value": "1234",
+									"value": "setfweD345#$.",
+									"type": "text"
+								},
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "/C:/Users/WILI/Downloads/Laboratorio2Taller/public/uploads/profile-pictures/minions.png"
+								},
+								{
+									"key": "phone",
+									"value": "35865645",
 									"type": "text"
 								},
 								{
 									"key": "role",
 									"value": "ADMIN_ROLE",
 									"type": "text"
-								},
-								{
-									"key": "profilePicture",
-									"type": "file",
-									"src": "postman-cloud:///1ef4dc1f-9b79-4680-a529-ea114dc8ffeb"
 								}
 							]
 						},
-						"url": "http://127.0.0.1:3001/adoptionSystem/v1/auth/register"
+						"url": "http://127.0.0.1:3000/adoptionSystem/v1/auth/register"
 					},
 					"response": []
 				},
@@ -126,7 +126,31 @@
 					"name": "Buscar un usuario por ID",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3001/adoptionSystem/v1/auth/findUser/:67a3d829735c997e5a1a9310",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"adoptionSystem",
+								"v1",
+								"auth",
+								"findUser",
+								":67a3d829735c997e5a1a9310"
+							],
+							"variable": [
+								{
+									"key": "67a3d829735c997e5a1a9310",
+									"value": ""
+								}
+							]
+						}
 					},
 					"response": []
 				},
@@ -135,7 +159,7 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "http://127.0.0.1:3001/adoptionSystem/v1/user/findUser/679cedc00c50f098afb74105"
+						"url": "http://127.0.0.1:3001/adoptionSystem/v1/user/deleteUser/67a3d829735c997e5a1a9310"
 					},
 					"response": []
 				},
@@ -143,7 +167,8 @@
 					"name": "Listar Usuarios",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": "http://127.0.0.1:3000/adoptionSystem/v1/user/"
 					},
 					"response": []
 				},
@@ -154,14 +179,14 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"newPassword\":\"12345678\"\r\n}",
+							"raw": "{\r\n    \"newPassword\":\"Perro152$#.\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "http://127.0.0.1:3001/adoptionSystem/v1/user/updatePassword/679cef6b0a9ac952c4552d76"
+						"url": "http://127.0.0.1:3001/adoptionSystem/v1/user/updatePassword/67a3d829735c997e5a1a9310"
 					},
 					"response": []
 				},
@@ -175,7 +200,7 @@
 							"formdata": [
 								{
 									"key": "name",
-									"value": "Joséss",
+									"value": "Oliver",
 									"type": "text"
 								},
 								{
@@ -215,7 +240,29 @@
 								}
 							]
 						},
-						"url": "http://127.0.0.1:3001/adoptionSystem/v1/user/updateUser"
+						"url": "http://127.0.0.1:3000/adoptionSystem/v1/users/updateUser/67a3da1f76817ee7877e5d8f"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Foto",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "/C:/Users/WILI/Downloads/Laboratorio2Taller/public/uploads/profile-pictures/mario.png"
+								}
+							]
+						},
+						"url": "http://127.0.0.1:3000/adoptionSystem/v1/user/updateProfilePicture/67aaccf9f26ce86619c4af63"
 					},
 					"response": []
 				}
@@ -246,7 +293,8 @@
 					"name": "Listar mascotas",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": "http://127.0.0.1:3000/adoptionSystem/v1/pet"
 					},
 					"response": []
 				},
@@ -256,51 +304,15 @@
 						"method": "POST",
 						"header": [],
 						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "name",
-									"value": "Joséss",
-									"type": "text"
-								},
-								{
-									"key": "surname",
-									"value": "Balenciagass",
-									"type": "text"
-								},
-								{
-									"key": "username",
-									"value": "jbalenciaga3",
-									"type": "text"
-								},
-								{
-									"key": "email",
-									"value": "jbalenciaga3@gmail.es",
-									"type": "text"
-								},
-								{
-									"key": "phone",
-									"value": "22160098",
-									"type": "text"
-								},
-								{
-									"key": "password",
-									"value": "1234",
-									"type": "text"
-								},
-								{
-									"key": "role",
-									"value": "ADMIN_ROLE",
-									"type": "text"
-								},
-								{
-									"key": "profilePicture",
-									"type": "file",
-									"src": "postman-cloud:///1ef4dc1f-9b79-4680-a529-ea114dc8ffeb"
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"bebe\",\r\n    \"description\": \"Es una mascota hamable\",\r\n    \"age\": \"3\",\r\n    \"type\": \"lobejero\",\r\n    \"keeper\": \"Camaroquin13\",\r\n    \"email\": \"catalina@gmsil.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
 								}
-							]
+							}
 						},
-						"url": "http://127.0.0.1:3001/adoptionSystem/v1/auth/register"
+						"url": "http://127.0.0.1:3000/adoptionSystem/v1/pet/addPet"
 					},
 					"response": []
 				}
@@ -313,7 +325,56 @@
 					"name": "Agregar una cita",
 					"request": {
 						"method": "POST",
-						"header": []
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\": \"2025-11-4\",\r\n    \"pet\": \"67aacd3cf26ce86619c4af68\",\r\n    \"user\": \"67aaccf9f26ce86619c4af63\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3000/adoptionSystem/v1/appointment/createAppointment"
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Cita",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:3000/adoptionSystem/v1/appointment/"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Cita",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\": \"2025-5-15\",\r\n    \"pet\": \"67aac0c8ff343c2dbc13c285\",\r\n    \"user\": \"67aab3dd58af236ab140692d\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3000/adoptionSystem/v1/appointment/updateAppointment/67aaa8a3f37577421cf3aad4"
+					},
+					"response": []
+				},
+				{
+					"name": "Cancelar Cita",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": "http://127.0.0.1:3000/adoptionSystem/v1/appointment/cancelarAppointment/67aace38f26ce86619c4af73"
 					},
 					"response": []
 				}

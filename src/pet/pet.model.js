@@ -32,4 +32,10 @@ const petSchema = new Schema({
     versionKey: false
 });
 
-export default model('Pet', petSchema);
+petSchema.methods.toJSON = function(){
+    const {password, _id, ...pset} = this.toObject()
+    pet.uid = _id
+    return pet
+}
+
+export default model("Pet", petSchema);

@@ -58,50 +58,71 @@ export const saveAppointment = async (req, res) => {
 };
 
 //listar citas
-export const getCitas = async (req, res) => {
+export const getAppoiment = async (req, res) => {
   try{
-    const { limite = 5, desde = 0 } = req.query
-    const query = { status: true }
+      const { limite = 5, desde = 0 } = req.query
+      const query = { status: "CREATED" }
 
-    const [total, citas ] = await Promise.all([
-        citas.countDocuments(query),
-        citas.find(query)
-            .skip(Number(desde))
-            .limit(Number(limite))
-    ])
+      const [total, appointments ] = await Promise.all([
+          Appointment.countDocuments(query),
+          Appointment.find(query)
+              .skip(Number(desde))
+              .limit(Number(limite))
+      ])
 
-    return res.status(200).json({
-        success: true,
-        total,
-        citas
-    })
-}catch(err){
-    return res.status(500).json({
-        success: false,
-        message: "Error al obtener las citas",
-        error: err.message
-    })
+      return res.status(200).json({
+          success: true,
+          message: "Lista de las citas",
+          total,
+          appointments
+      })
+  }catch(err){
+      return res.status(500).json({
+          success: false,
+          message: "Error al obtener los las citas",
+          error: err.message
+      })
+  }
 }
-}
 
-//Actualizar Usuario
-export const updateCitas = async (req, res) => {
+//Actualizar Citas
+export const updateAppointment = async (req, res) => {
   try {
       const { uid } = req.params;
       const  data  = req.body;
 
-      const citas = await citas.findByIdAndUpdate(uid, data, { new: true });
+      const appointment = await Appointment.findByIdAndUpdate(uid, data, { new: true });
 
       res.status(200).json({
           success: true,
-          msg: 'Cita Actualizado',
-          citas,
-      });
+          msg: 'Cita Actualizada',
+          appointment
+      })
   } catch (err) {
       res.status(500).json({
           success: false,
           msg: 'Error al actualizar cita',
           error: err.message
       });
+  }
+}
+
+//Cancelar cita
+export const cancelarAppointment = async (req, res) => {
+  try{
+      const { uid } = req.params
+
+      await Appointment.findByIdAndUpdate(uid, {status: "CANCELLED"}, {new: true})
+
+      return res.status(200).json({
+          success: true,
+          message: "Cita cancelada",
+      })
+  }catch(err){
+      return res.status(500).json({
+          success: false,
+          message: "Error al cancelar la cita",
+          error: err.message
+      })
   }
 }

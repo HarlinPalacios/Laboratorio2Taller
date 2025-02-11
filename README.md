@@ -116,11 +116,43 @@ Las siguientes funcionalidades necesitan ser desarrolladas:
 1. **Actualizar Foto del Usuario**
    - Descripción: Implementar funcionalidad para actualizar la foto de perfil del usuario.
 
+    URL: v1/user/updateProfilePicture/:uid
+
+    METODO: patch
+
+    CUERPO: profilePicture  y la imagen a actualizar
+
 2. **Listar Citas**
    - Descripción: Implementar funcionalidad para listar todas las citas de un usuario.
+
+  URL: /v1/appointment/
+
+  METODO: get
+
+  CUERPO: 
+  
 
 3. **Actualizar Cita**
    - Descripción: Implementar funcionalidad para actualizar una cita existente.
 
+  URL: /v1/appointment/updateAppointment/:uid
+
+  METODO: put
+
+  CUERPO: 
+  {
+    "date": "2025-5-15",
+    "pet": "67aac0c8ff343c2dbc13c285",
+    "user": "67aab3dd58af236ab140692d"
+  }
+  
+
 4. **Cancelar Cita**
    - Descripción: Implementar funcionalidad para cancelar una cita existente.
+
+  URL: v1/appointment/cancelarAppointment/:uid
+
+  METODO: patch
+
+  CUERPO: id de la cita a cancelar
+  
